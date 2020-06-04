@@ -26,12 +26,95 @@ possível voltar para a estrutura original de pastas.
 Outra forma que podemos utilizar para criação de componentes fucionais é:
 <br />
 <code>
-
+<pre>
 const App: React.App = () => {
   return(
     < h1 >Hello World< h1 >
   )
 }
+</pre>
+</code>
+<br/>
+<br/>
+<hr/>
+<h2>Passos do projeto</h2>
+<strong>Estilos Globais</strong>
+<br/>
+Inicialmente vamos criar uma pasta para configurarmos os estilos globais
+de nosso projeto. Isso nos ajudará quando desejarmos mudar de tema.
+<br/> Por exemplo, um tema dark para a Black Friday.
+<br/><br/>
+<strong>Styled Components</strong>
+<br/>
+Estamos utilizando <em>styled-components</em> para montarmos o css
+de nosso projeto.
+<br/><br/><em>yarn add styled-components</em>
+<br/><br/>
+Precisamos também instalar as tipagens do styled-component também.
+<br/><br/><em>yarn add @types/styled-components -D</em>
+<br><br>
+Um ponto de atenção é que ao utilizar os styles-components, precisamos
+importar da seguinte forma nosso css.
+
+import GlobalStyle from './styles/global';
+<br><br>
+Além disso, utilizando o styled-components, temos algumas vantagens.
+Por exemplo:<br/>
+
+Temos uma referência direta para nosso css global, utilizando
+createGlobalStyle. Claro que depois precisamos importá-lo
+em nosso arquivo principal e englobar o componente < App />.
+<pre>
+<code>
+import {createGlobalStyle} from 'styled-components';
+
+export default createGlobalStyle`
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+  }
+
+  body{
+    background: #312e38;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body, input, button{
+    font-family: 'Roboto Slab', serif;
+    font-size: 16px;
+  }
+
+  h1, h2, h3, h4, h5, h6, strong{
+    font-weight: 500;
+  }
+
+  button{
+    cursor: pointer;
+  }
+`;
+
+
+/* App.tsx */
+
+import React from 'react';
+
+/* Style import */
+import GlobalStyle from './styles/global';
+
+const App: React.FC = () => {
+  return(
+    < >
+      < h1 > Hello World < / h1 >
+      < /GlobalStyle >
+    < />
+  );
+};
+
+export default App;
 
 </code>
+</pre>
 
