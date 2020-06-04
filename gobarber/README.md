@@ -119,5 +119,10 @@ export default App;
 </pre>
 
 <br/><br/>
+<strong>react-icons</strong>
+<br/>Uma dependência que podemos utilizar é a <em>react-icons</em>, que
+nos permite aplicar uma série de ícones para nossa aplicação.
+<br/> <em>react-icons/fi</em> é o diretório de ícones que estamos utilizando.
 
-
+<br><br>
+<strong></strong>s
