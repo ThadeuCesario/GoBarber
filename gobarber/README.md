@@ -24,8 +24,7 @@ possível voltar para a estrutura original de pastas.
 <strong>Outra forma de criar componente funcional</strong>
 <br/>
 Outra forma que podemos utilizar para criação de componentes fucionais é:
-<br>
-<pre>
+<br />
 <code>
 
 const App: React.App = () => {
@@ -35,4 +34,4 @@ const App: React.App = () => {
 }
 
 </code>
-</pre>
+
