@@ -6,18 +6,21 @@
 */
 
 import React, {InputHTMLAttributes} from 'react';
+import {IconBaseProps} from 'react-icons';
 
 /* Import CSS*/
 import {Container} from "./styles";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
   name: string; // O Atributo nome não é obrigatório para o input, porém para meu elemento estou colocando como obrigatório. (Estamos alterando)
+  icon?: React.ComponentType<IconBaseProps>;
 }
 
-const Input: React.FC<InputProps> = () => {
+const Input: React.FC<InputProps> = ({icon:Icon, ...rest}) => {
   return(
     <Container>
-      <input type={'text'} />
+      {Icon && <Icon size={20} />}
+      <input {...rest}/>
     </Container>
   )
 }
