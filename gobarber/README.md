@@ -128,3 +128,58 @@ nos permite aplicar uma série de ícones para nossa aplicação.
 <strong>polished</strong><br/>
 O polished é um dependência que podemos utilizar para tratarmos manipulação dar cores.
 Por exemplo, o <em>shade</em> é uma ótima opção para trabalharmos com efeitos de hover.
+
+<br><br>
+<strong>Criando componente Input</strong>
+Após análise de nossa aplicação, podemos ver que nosso input de login, aparece
+diversas vezes em nossa aplicação. Portanto o ideal é criar um componente global,
+para que seja utilizado de forma geral.
+<br>
+Entretanto ao fazermos isso, precisamos declarar quais atributos nosso componente
+estará herdando. Veja o código abaixo:
+
+<code>
+<pre>
+
+import React, {InputHTMLAttributes} from 'react';
+
+
+import {Container} from "./styles";
+
+interface InputProps extends InputHTMLAttributes< HTMLInputElement >{
+  name: string;
+}
+
+const Input: React.FC< InputProps > = () => {
+  return(
+    < Container >
+      <input type={'text'} />
+    < /Container >
+  )
+}
+
+export default Input;
+
+
+</pre>
+</code>
+Com o código anterior temos todas as propriedades que um input padrão recebe.
+Além disso, forçamos para que o 'name' seja obrigatório.
+Veja que importei de dentro do react, todos os atributos do input do HTML.
+Ainda assim preciso extender o código na nossa tipagem e após a tipagem estar
+criada, precisamos declarar em nosso componente funcional.
+<br><br>
+
+Como disse, no componente Input eu sobreescrevi um atributo padrão do Input.
+Porém quando não precisamos sobreescrever nada, temos uma forma mais reduzida de aplicarmos
+nossa tipagem.<br>
+Veja:
+<br>
+<code>
+type ButtonProps = ButtonHTMLAttributes< HTMLButtonElement >;
+</code>
+
+O código acima é uma interface sem nenhum atributo além dos que são padrões
+do proprio button extendido do HTML.
+Então, basta importarmos do React o atributo do button e tipá-lo como HTMLButtonElement.
+Feito isso, como não vamos alterar nada podemos criar um <em>type</em>.

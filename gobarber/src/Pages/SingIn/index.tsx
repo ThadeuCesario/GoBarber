@@ -8,6 +8,10 @@ import {Container, Content, Background} from './styles';
 /* Import Image */
 import logoImg from '../../Assets/logo.svg';
 
+/* Import Components */
+import Input from "../../components/Input";
+import Button from "../../components/Button";
+
 const SignIn: React.FC = () => {
   return(
     <Container>
@@ -15,9 +19,9 @@ const SignIn: React.FC = () => {
         <img src={logoImg} alt="Logo GoBarber" />
         <form>
           <h1>Faça seu logon</h1>
-          <input type="text" placeholder={'E-mail'} />
-          <input type="password" placeholder={'Password'} />
-          <button type="submit">Entrar</button>
+          <Input name={'email'} type="text" placeholder={'E-mail'} />
+          <Input name={'password'} type="password" placeholder={'Password'} />
+          <Button type="submit"></Button>
           <a href="forgot">Esqueci minha senha</a>
         </form>
         <a href="">
