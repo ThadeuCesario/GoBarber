@@ -125,4 +125,6 @@ nos permite aplicar uma série de ícones para nossa aplicação.
 <br/> <em>react-icons/fi</em> é o diretório de ícones que estamos utilizando.
 
 <br><br>
-<strong></strong>s
+<strong>polished</strong><br/>
+O polished é um dependência que podemos utilizar para tratarmos manipulação dar cores.
+Por exemplo, o <em>shade</em> é uma ótima opção para trabalharmos com efeitos de hover.
