@@ -231,3 +231,10 @@ Quando passamos como vazio, significa que ela nunca deverá ser recriada.
   }, []);
 </pre>
 </code>
+<hr/>
+<strong>Yup</strong>
+<br/>
+Biblioteca para validação de formulários. <br/>
+<code>
+yarn add yup
+</code>
