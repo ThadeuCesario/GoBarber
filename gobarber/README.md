@@ -195,4 +195,8 @@ Para trabalharmos com formulário de uma forma melhor, vamos utilizar uma lib cr
 Execute os seguintes comandos:
 <br/><br/>
 <code>yarn add @unform/core @unform/web</code>
+<br/><br/>
+Feito, isso basta importarmos de dentro de '@unform/web' o 'Form' e trocar nosso form tradicional do HTML, por esse form que
+importamos.<br/>
+Será necessário passar em seguida uma função de onSubmit={}, dentro do componente de < Form >.
 
