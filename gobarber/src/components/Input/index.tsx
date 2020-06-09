@@ -5,7 +5,7 @@
 *
 */
 
-import React, {InputHTMLAttributes, useEffect, useRef} from 'react';
+import React, {InputHTMLAttributes, useEffect, useRef, useState} from 'react';
 import {useField} from '@unform/core';
 import {IconBaseProps} from 'react-icons';
 
@@ -16,10 +16,10 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
   name: string; // O Atributo nome não é obrigatório para o input, porém para meu elemento estou colocando como obrigatório. (Estamos alterando)
   icon?: React.ComponentType<IconBaseProps>;
 }
-
 const Input: React.FC<InputProps> = ({name, icon:Icon, ...rest}) => {
   const inputRef = useRef(null);
   const {fieldName, defaultValue, error, registerField} = useField(name);
+  const [isFocused, setIsFocused] = useState(false);
 
   useEffect(() => {
     registerField({
@@ -30,9 +30,9 @@ const Input: React.FC<InputProps> = ({name, icon:Icon, ...rest}) => {
   }, [fieldName, registerField]);
 
   return(
-    <Container>
+    <Container isFocused={isFocused}>
       {Icon && <Icon size={20} />}
-      <input {...rest} ref={inputRef} defaultValue={defaultValue}/>
+      <input {...rest} ref={inputRef} defaultValue={defaultValue} onFocus={_ => setIsFocused(true)} onBlur={_ => setIsFocused(false)}/>
     </Container>
   )
 }
