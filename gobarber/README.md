@@ -214,4 +214,20 @@ Mas dentro do React criamos esse Ref.
 Para criar uma Ref é muito simples. Basta importar dentro de React o 'useRef', em seguida declaramos
 dentro de nosso componente esse Ref com algum valor inicial (pode ser null), depois basta inserir no elemento
 que desejarmos o seguinte: <code>ref={nomeDaConstDeRef}</code>. Veja o código do componente input.
-
+<hr/>
+<strong>useCallback</strong><br/>
+Esse Hook é uma forma de criarmos funções dentro de nosso componente que não são recriadas na memória, toda vez que
+aquele componente atualiza. Elas ficam salvas na memória e podemos informar os momentos que elas devem ser alteradas.
+<br/>
+Veja o código abaixo é a forma que podemos definir uma função de callBack.
+Veja que semelhante ao Hook de useEffect, ela também recebe um segundo parâmetro que informamos, quando essa função
+deverá ser recriada.
+<br/>
+Quando passamos como vazio, significa que ela nunca deverá ser recriada.
+<code>
+<pre>
+  const handleInputBlur = useCallback(() => {
+    setIsFocused(false);
+  }, []);
+</pre>
+</code>
