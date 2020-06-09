@@ -22,6 +22,10 @@ const Input: React.FC<InputProps> = ({name, icon:Icon, ...rest}) => {
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
 
+  const handleInputFocus = useCallback(() => {
+    setIsFocused(true);
+  },[])
+
   const handleInputBlur = useCallback(() => {
     setIsFocused(false);
 
@@ -47,7 +51,7 @@ const Input: React.FC<InputProps> = ({name, icon:Icon, ...rest}) => {
   return(
     <Container isFocused={isFocused} isFilled={isFilled}>
       {Icon && <Icon size={20} />}
-      <input {...rest} ref={inputRef} defaultValue={defaultValue} onFocus={_ => setIsFocused(true)} onBlur={handleInputBlur}/>
+      <input {...rest} ref={inputRef} defaultValue={defaultValue} onFocus={handleInputFocus} onBlur={handleInputBlur}/>
     </Container>
   )
 }
