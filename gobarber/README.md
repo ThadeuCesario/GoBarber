@@ -183,3 +183,16 @@ O código acima é uma interface sem nenhum atributo além dos que são padrões
 do proprio button extendido do HTML.
 Então, basta importarmos do React o atributo do button e tipá-lo como HTMLButtonElement.
 Feito isso, como não vamos alterar nada podemos criar um <em>type</em>.
+
+<br/><br/>
+<strong>unform (criado pela Rocketseat)</strong><br/>
+No início, estavamos trabalhando com formulários seguindo um estado para cada input. Mas se lembrarmos o conceito
+de estados, sabemos que a cada atualização do estado, o componente que armazena aquele estado é atualizado.
+Isso acaba desgastando a performance de nossa aplicação.
+<br/>
+Para trabalharmos com formulário de uma forma melhor, vamos utilizar uma lib criada pela propria RocketSeat que é o unform.
+<br/>
+Execute os seguintes comandos:
+<br/><br/>
+<code>yarn add @unform/core @unform/web</code>
+
