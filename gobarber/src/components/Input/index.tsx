@@ -17,12 +17,23 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
   icon?: React.ComponentType<IconBaseProps>;
 }
 const Input: React.FC<InputProps> = ({name, icon:Icon, ...rest}) => {
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const {fieldName, defaultValue, error, registerField} = useField(name);
   const [isFocused, setIsFocused] = useState(false);
+  const [isFilled, setIsFilled] = useState(false);
 
   const handleInputBlur = useCallback(() => {
     setIsFocused(false);
+
+    if(inputRef.current?.value){
+      /* Passamos o interrogação para caso o valor seja nulo.
+       *  Então o campo é previamente verificado, antes de tentar acessar o atributo value.
+       */
+      setIsFilled(true);
+    }
+    else{
+      setIsFilled(false);
+    }
   }, []);
 
   useEffect(() => {
@@ -34,9 +45,9 @@ const Input: React.FC<InputProps> = ({name, icon:Icon, ...rest}) => {
   }, [fieldName, registerField]);
 
   return(
-    <Container isFocused={isFocused}>
+    <Container isFocused={isFocused} isFilled={isFilled}>
       {Icon && <Icon size={20} />}
-      <input {...rest} ref={inputRef} defaultValue={defaultValue} onFocus={_ => setIsFocused(true)} onBlur={_ => handleInputBlur}/>
+      <input {...rest} ref={inputRef} defaultValue={defaultValue} onFocus={_ => setIsFocused(true)} onBlur={handleInputBlur}/>
     </Container>
   )
 }
