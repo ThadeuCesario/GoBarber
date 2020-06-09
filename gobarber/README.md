@@ -199,4 +199,19 @@ Execute os seguintes comandos:
 Feito, isso basta importarmos de dentro de '@unform/web' o 'Form' e trocar nosso form tradicional do HTML, por esse form que
 importamos.<br/>
 Será necessário passar em seguida uma função de onSubmit={}, dentro do componente de < Form >.
+<br/>
+Porém previamente, precisamos informar para o unform, quais campos, desejamos que ele monitore o valor. Caso contrário
+o retorno será sempre um objeto vazio. (Conhecido dentro dessa biblioteca, como registro, ou seja, estou fazendo
+o registro dos campos.) [Veja o componente de Input para obter mais detalhes.].
+
+<hr/>
+<strong>ref</strong>
+<br/>
+Utilizamos ref dentro do React para que o React consiga acessar diretamente um elemento,
+como se fosse um 'document.getElementById'.
+Mas dentro do React criamos esse Ref.
+<br/>
+Para criar uma Ref é muito simples. Basta importar dentro de React o 'useRef', em seguida declaramos
+dentro de nosso componente esse Ref com algum valor inicial (pode ser null), depois basta inserir no elemento
+que desejarmos o seguinte: <code>ref={nomeDaConstDeRef}</code>. Veja o código do componente input.
 
