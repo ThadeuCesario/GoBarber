@@ -1,7 +1,7 @@
 /*
   Import libs
 */
-import React from 'react';
+import React, { useCallback } from 'react';
 import { FiArrowLeft, FiLock, FiMail, FiUser } from 'react-icons/fi';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
