@@ -238,3 +238,18 @@ Biblioteca para validação de formulários. <br/>
 <code>
 yarn add yup
 </code>
+<br/>
+Um ponto importante, é que o Yup possui uma configuração por padrão, que
+para no primeiro erro encontrado. Para não termos esse comportamento,
+dentro do schema valitador, precisamos passar a seguinte
+configuração:
+<code>
+<pre>
+await schema.validate(data, {
+        abortEarly: false,
+      });
+</pre>
+</code>
+<br/>
+Com o abortEarly configurado para false, não será interrompido o processo
+logo ao primeiro erro.
