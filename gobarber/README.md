@@ -253,3 +253,33 @@ await schema.validate(data, {
 <br/>
 Com o abortEarly configurado para false, não será interrompido o processo
 logo ao primeiro erro.
+<hr/>
+<strong>Trabalhando com erros no formulário - utilizando o unform</strong>
+<p>
+Primeiramente precisaremos utilizar o conceito de ref, para o formulário.
+Portanto, podemos utilizar o <strong>useRef</strong> e referenciar em nosso,
+formulário.
+<br/>
+Fazendo isso, teremos acesso em algumas funções que são:
+</p>
+<ul>
+<li>clearField</li>
+<li>getData</li>
+<li>getErrors</li>
+<li>getFieldError</li>
+<li>getFieldRef</li>
+<li>getFieldValue</li>
+<li>reset</li>
+<li>setData</li>
+<li>setErrors</li>
+<li>setFieldError</li>
+<li>setFieldValue</li>
+<li>submitForm</li>
+</ul>
+
+<strong>
+Porém antes de utilizarmos essas funções, precisamos importar de dentro do '@unform/core',
+o FormHandles.<br/>
+Esse FormHandles, é uma interface que contem a tipagem de todas as funções que listamos.
+Portanto, basta passar a formHandles que importamos como parametro da nossa Ref.
+</strong>
