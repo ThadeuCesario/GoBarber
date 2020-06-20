@@ -33,7 +33,10 @@ const SignUp: React.FC = () => {
         abortEarly: false,
       });
     } catch (err) {
-      console.log(err);
+      formRef.current?.setErrors({
+        name: 'Nome está inválido',
+      });
+      console.log('should be work');
     }
   }, []);
 
