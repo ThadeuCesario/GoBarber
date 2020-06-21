@@ -283,3 +283,24 @@ o FormHandles.<br/>
 Esse FormHandles, é uma interface que contem a tipagem de todas as funções que listamos.
 Portanto, basta passar a formHandles que importamos como parametro da nossa Ref.
 </strong>
+<hr/>
+<strong>Context API</strong>
+<p>
+Como conseguimos passar a informação que está armazenada em um componente para outro componente?
+<strong>utilizando o context api =D</strong>
+</p>
+<p>
+O contexto é basicamente uma variável que ficará acessível de forma global ou não global. Podemos escolher o local que ela ficará acessível dentro de nossa aplicação.
+</p>
+
+A função mais importante do AuthContext é o Provider, que englobamos com os componentes que queremos que tenham acesso em nossa aplicação.
+<br/>
+Portanto se queremos que nossa aplicação inteira tenha acesso em um determinado contexto. Basta colocar por volta de todo o App.
+<hr/>
+<strong>Mais sobre contexto</strong>
+<p>
+Podemos definir métodos que fiquem acessíveis de forma global em nossa aplicação.
+<br/><br/>
+Por exemplo o método de logout.<br/><br/>
+Portanto, todos esses métodos de login, logout, cadastro. Vão ficar em um contexto geral de nossa aplicação. Dessa forma, não vamos precisar repetir esses códigos e vamos manter um bom isolamento.
+</p>

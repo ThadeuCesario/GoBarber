@@ -1,4 +1,4 @@
-import { ValidationError } from 'yup';
+import React, { ValidationError } from 'yup';
 
 interface Errors {
   [key: string]: string;
